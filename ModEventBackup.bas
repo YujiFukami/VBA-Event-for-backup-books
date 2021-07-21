@@ -16,7 +16,8 @@ Sub ワークブック保存時にフォルダに上書きバックアップ()
         MkDir FilePath & "\" & FolderName
     End If
     
-    Dim FSO As New FileSystemObject
+    Dim FSO As Object
+    Set FSO = CreateObject("Scripting.FileSystemObject")
     FSO.CopyFile FilePath & "\" & BookName, FilePath & "\" & FolderName & "\" & BookName
     
 End Sub
@@ -33,7 +34,8 @@ Sub ワークブック保存時にフォルダに日付をつけてバックアップ()
         MkDir FilePath & "\" & FolderName
     End If
     
-    Dim FSO As New FileSystemObject
+    Dim FSO As Object
+    Set FSO = CreateObject("Scripting.FileSystemObject")
     extension = FSO.GetExtensionName(BookName)
     BookName2 = Replace(BookName, "." & extension, "")
     StrTime = Format(Now(), "YYYYMMDDhhmmss") '←←←←←←←←←←←←←←←←←←←←←←←
@@ -49,7 +51,8 @@ Sub ワークブック保存時に同じフォルダ上に上書きバックアップ()
     AddStr = "backup" 'バックアップファイルの語尾につく名前←←←←←←←←←←←←←←←←←←←←←←←
     BookName = ThisWorkbook.Name
     
-    Dim FSO As New FileSystemObject
+    Dim FSO As Object
+    Set FSO = CreateObject("Scripting.FileSystemObject")
     extension = FSO.GetExtensionName(BookName)
     BookName2 = Replace(BookName, "." & extension, "")
     FSO.CopyFile FilePath & "\" & BookName, FilePath & "\" & BookName2 & "_" & AddStr & "." & extension
@@ -65,7 +68,8 @@ Sub ワークブック保存時に同じフォルダ上に日付をつけて上書きバックアップ()
     AddStr = "backup" 'バックアップファイルの語尾につく名前←←←←←←←←←←←←←←←←←←←←←←←
     BookName = ThisWorkbook.Name
     
-    Dim FSO As New FileSystemObject
+    Dim FSO As Object
+    Set FSO = CreateObject("Scripting.FileSystemObject")
     extension = FSO.GetExtensionName(BookName)
     BookName2 = Replace(BookName, "." & extension, "")
     StrTime = Format(Now(), "YYYYMMDDhhmmss") '←←←←←←←←←←←←←←←←←←←←←←←
