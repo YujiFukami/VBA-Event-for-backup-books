@@ -24,7 +24,7 @@ Sub ワークブック保存時にフォルダに日付をつけてバックアップ()
 'ワークブック保存時にフォルダに日付をつけてバックアップ
 '20210721
 
-    Dim FilePath$, FolderName$, BookName$, extension$, BookName2$, StrTime$
+    Dim FilePath$, FolderName$, BookName$, Extension$, BookName2$, StrTime$
     FilePath = ThisWorkbook.Path
     FolderName = "Backup" 'バックアップするフォルダの名前←←←←←←←←←←←←←←←←←←←←←←←
     BookName = ThisWorkbook.Name
@@ -34,25 +34,25 @@ Sub ワークブック保存時にフォルダに日付をつけてバックアップ()
     End If
     
     Dim FSO As New FileSystemObject
-    extension = FSO.GetExtensionName(BookName)
-    BookName2 = Replace(BookName, "." & extension, "")
+    Extension = FSO.GetExtensionName(BookName)
+    BookName2 = Replace(BookName, "." & Extension, "")
     StrTime = Format(Now(), "YYYYMMDDhhmmss") '←←←←←←←←←←←←←←←←←←←←←←←
-    FSO.CopyFile FilePath & "\" & BookName, FilePath & "\" & FolderName & "\" & BookName2 & " " & StrTime & "." & extension
+    FSO.CopyFile FilePath & "\" & BookName, FilePath & "\" & FolderName & "\" & BookName2 & " " & StrTime & "." & Extension
     
 End Sub
 Sub ワークブック保存時に同じフォルダ上に上書きバックアップ()
 'ワークブック保存時に同じフォルダ上に上書きバックアップ
 '20210721
 
-    Dim FilePath$, AddStr$, BookName$, extension$, BookName2$, StrTime$
+    Dim FilePath$, AddStr$, BookName$, Extension$, BookName2$, StrTime$
     FilePath = ThisWorkbook.Path
     AddStr = "backup" 'バックアップファイルの語尾につく名前←←←←←←←←←←←←←←←←←←←←←←←
     BookName = ThisWorkbook.Name
     
     Dim FSO As New FileSystemObject
-    extension = FSO.GetExtensionName(BookName)
-    BookName2 = Replace(BookName, "." & extension, "")
-    FSO.CopyFile FilePath & "\" & BookName, FilePath & "\" & BookName2 & "_" & AddStr & "." & extension
+    Extension = FSO.GetExtensionName(BookName)
+    BookName2 = Replace(BookName, "." & Extension, "")
+    FSO.CopyFile FilePath & "\" & BookName, FilePath & "\" & BookName2 & "_" & AddStr & "." & Extension
     
 End Sub
 
@@ -60,15 +60,15 @@ Sub ワークブック保存時に同じフォルダ上に日付をつけて上書きバックアップ()
 'ワークブック保存時に同じフォルダ上に日付をつけて上書きバックアップ
 '20210721
 
-    Dim FilePath$, AddStr$, BookName$, extension$, BookName2$, StrTime$
+    Dim FilePath$, AddStr$, BookName$, Extension$, BookName2$, StrTime$
     FilePath = ThisWorkbook.Path
     AddStr = "backup" 'バックアップファイルの語尾につく名前←←←←←←←←←←←←←←←←←←←←←←←
     BookName = ThisWorkbook.Name
     
     Dim FSO As New FileSystemObject
-    extension = FSO.GetExtensionName(BookName)
-    BookName2 = Replace(BookName, "." & extension, "")
+    Extension = FSO.GetExtensionName(BookName)
+    BookName2 = Replace(BookName, "." & Extension, "")
     StrTime = Format(Now(), "YYYYMMDDhhmmss") '←←←←←←←←←←←←←←←←←←←←←←←
-    FSO.CopyFile FilePath & "\" & BookName, FilePath & "\" & BookName2 & "_" & AddStr & "_" & StrTime & "." & extension
+    FSO.CopyFile FilePath & "\" & BookName, FilePath & "\" & BookName2 & "_" & AddStr & "_" & StrTime & "." & Extension
     
 End Sub
