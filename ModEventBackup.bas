@@ -20,6 +20,7 @@ Sub ワークブック保存時にフォルダに上書きバックアップ()
     FSO.CopyFile FilePath & "\" & BookName, FilePath & "\" & FolderName & "\" & BookName
     
 End Sub
+
 Sub ワークブック保存時にフォルダに日付をつけてバックアップ()
 'ワークブック保存時にフォルダに日付をつけてバックアップ
 '20210721
@@ -40,6 +41,7 @@ Sub ワークブック保存時にフォルダに日付をつけてバックアップ()
     FSO.CopyFile FilePath & "\" & BookName, FilePath & "\" & FolderName & "\" & BookName2 & " " & StrTime & "." & Extension
     
 End Sub
+
 Sub ワークブック保存時に同じフォルダ上に上書きバックアップ()
 'ワークブック保存時に同じフォルダ上に上書きバックアップ
 '20210721
