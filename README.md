@@ -30,11 +30,18 @@
 
 -  「Microsoft Scripting Runtime」 FileSystemObjectを使用するため
 
+![参照ライブラリ](https://user-images.githubusercontent.com/73621859/130732662-861cbc29-ef1f-46e9-ac3c-0f53db1ce02c.jpg)
+
 ### 設定3 (イベントプロシージャ設定)
 
 　ワークブック保存直前時イベント（Workbook_BeforeSave）のコード内に、バックアップ実行用のプロシージャを実行するように設定する。
 
+![イベント設定](https://user-images.githubusercontent.com/73621859/130732631-f650ea95-185c-40a1-b70c-3cf74000fed0.jpg)
+
 　これにより、ワークブック保存時に自動的にバックアップが生成されるようになる。
+
+![バックアップ状況](https://user-images.githubusercontent.com/73621859/130732651-52e87c28-1167-4678-8e59-4869f2aedbc6.jpg)
+
 
 ## 現在「Dictionary.bas」にて使用できるプロシージャ一覧
 
