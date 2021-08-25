@@ -48,7 +48,7 @@ Sub ワークブック保存時に同じフォルダ上に上書きバックアップ()
 
     Dim FilePath$, AddStr$, BookName$, Extension$, BookName2$, StrTime$
     FilePath = ThisWorkbook.Path
-    AddStr = "backup" 'バックアップファイルの語尾につく名前←←←←←←←←←←←←←←←←←←←←←←←
+    AddStr = "Backup" 'バックアップファイルの語尾につく名前←←←←←←←←←←←←←←←←←←←←←←←
     BookName = ThisWorkbook.Name
     
     Dim FSO As New FileSystemObject
@@ -64,7 +64,7 @@ Sub ワークブック保存時に同じフォルダ上に日付をつけて上書きバックアップ()
 
     Dim FilePath$, AddStr$, BookName$, Extension$, BookName2$, StrTime$
     FilePath = ThisWorkbook.Path
-    AddStr = "backup" 'バックアップファイルの語尾につく名前←←←←←←←←←←←←←←←←←←←←←←←
+    AddStr = "Backup" 'バックアップファイルの語尾につく名前←←←←←←←←←←←←←←←←←←←←←←←
     BookName = ThisWorkbook.Name
     
     Dim FSO As New FileSystemObject
@@ -74,3 +74,4 @@ Sub ワークブック保存時に同じフォルダ上に日付をつけて上書きバックアップ()
     FSO.CopyFile FilePath & "\" & BookName, FilePath & "\" & BookName2 & "_" & AddStr & "_" & StrTime & "." & Extension
     
 End Sub
+
